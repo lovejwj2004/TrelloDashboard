@@ -34,6 +34,8 @@ configurations {
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile group: 'org.jsoup', name: 'jsoup', version: '1.8.3'
+	compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.5'
+	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.5'
 	testCompile('org.springframework.boot:spring-boot-starter-test') 
 }
 

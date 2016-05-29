@@ -1,6 +1,8 @@
 package chne.travelsky.flight.business.veryzhun;
 
 import chne.travelsky.flight.model.Flight;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -14,16 +16,19 @@ import java.util.List;
  * Created by lovejwj2004 on 2016/5/28.
  */
 public class SegmentUtils {
+    private static final Logger logger = LogManager.getLogger(SegmentUtils.class);
+
     private static String BASEURL = "http://www.variflight.com/flight/";
     private static String TOKEN = "AE71649A58c77";
     public static List<Flight> getFlightsByODAndDate(String od,String date){
         String url = generateURL(od,date);
         List<Flight> flights = null;
         try {
-            System.out.println("URL:"+url);
+            logger.info("Segment Request URL:"+url);
             Document doc = Jsoup.connect(url).get();
             Elements flightList = doc.select("#list>li");
             flights = fetchFlightsInfo(flightList);
+            logger.info("Flight Size:"+flights.size());
         }catch (IOException e){
             e.printStackTrace();
         }
