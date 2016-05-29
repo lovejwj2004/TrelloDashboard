@@ -65,8 +65,4 @@ public class SegmentUtils {
         return flights;
     }
 
-    public static void main(String[] args)
-    {
-        System.out.println(SegmentUtils.getFlightsByODAndDate("HAK-CSX","20160530"));
-    }
 }
