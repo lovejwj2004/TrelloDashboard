@@ -17,9 +17,10 @@ import java.util.List;
  */
 public class SegmentUtils {
     private static final Logger logger = LogManager.getLogger(SegmentUtils.class);
-
     private static String BASEURL = "http://www.variflight.com/flight/";
     private static String TOKEN = "AE71649A58c77";
+
+
     public static List<Flight> getFlightsByODAndDate(String od,String date){
         String url = generateURL(od,date);
         List<Flight> flights = null;
@@ -36,6 +37,10 @@ public class SegmentUtils {
         return flights;
     }
 
+    /**
+     *
+     * Below are private methods,not available for public only class function.
+     */
 
     private static String generateURL(String od,String date){
         StringBuffer sb = new StringBuffer();
