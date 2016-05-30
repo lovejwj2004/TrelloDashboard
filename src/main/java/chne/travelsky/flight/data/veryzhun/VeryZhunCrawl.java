@@ -1,4 +1,4 @@
-package chne.travelsky.flight.business.veryzhun;
+package chne.travelsky.flight.data.veryzhun;
 
 import chne.travelsky.flight.model.Flight;
 import org.apache.log4j.LogManager;
@@ -15,8 +15,8 @@ import java.util.List;
 /**
  * Created by lovejwj2004 on 2016/5/28.
  */
-public class SegmentUtils {
-    private static final Logger logger = LogManager.getLogger(SegmentUtils.class);
+public class VeryZhunCrawl {
+    private static final Logger logger = LogManager.getLogger(VeryZhunCrawl.class);
     private static String BASEURL = "http://www.variflight.com/flight/";
     private static String TOKEN = "AE71649A58c77";
 
