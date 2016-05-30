@@ -12,6 +12,6 @@ public class FlightServiceTest {
     @Test
     public void testGetAirlineCollection(){
         Set<String> airlines = FlightService.getAirlineCollection("HAK-CSX","20160530");
-        Assert.assertNotEquals(true,airlines.size()>0);
+        Assert.assertEquals(true,airlines.size()>0);
     }
 }
