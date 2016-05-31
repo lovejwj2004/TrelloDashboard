@@ -1,4 +1,4 @@
-package chne.travelsky.flight.data.veryzhun;
+package chne.travelsky.flight.data.crawl;
 
 import chne.travelsky.flight.model.Flight;
 import org.apache.log4j.LogManager;

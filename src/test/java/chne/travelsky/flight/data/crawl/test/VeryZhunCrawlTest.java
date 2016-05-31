@@ -1,6 +1,6 @@
-package chne.travelsky.flight.data.veryzhun.test;
+package chne.travelsky.flight.data.crawl.test;
 
-import chne.travelsky.flight.data.veryzhun.VeryZhunCrawl;
+import chne.travelsky.flight.data.crawl.VeryZhunCrawl;
 import chne.travelsky.flight.model.Flight;
 import org.junit.Assert;
 import org.junit.Test;

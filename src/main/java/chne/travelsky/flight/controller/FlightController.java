@@ -1,7 +1,7 @@
 package chne.travelsky.flight.controller;
 
 import chne.travelsky.flight.business.FlightService;
-import chne.travelsky.flight.data.veryzhun.VeryZhunCrawl;
+import chne.travelsky.flight.data.crawl.VeryZhunCrawl;
 import chne.travelsky.flight.model.Flight;
 import org.springframework.web.bind.annotation.*;
 

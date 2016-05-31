@@ -1,6 +1,6 @@
 package chne.travelsky.flight.business;
 
-import chne.travelsky.flight.data.veryzhun.VeryZhunCrawl;
+import chne.travelsky.flight.data.crawl.VeryZhunCrawl;
 import chne.travelsky.flight.model.Flight;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
