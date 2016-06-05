@@ -4,9 +4,11 @@ buildscript {
 	}
 	repositories {
 		mavenCentral()
+		maven { url 'http://repo.spring.io/plugins-release' }
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
 	}
 }
 
@@ -15,6 +17,12 @@ apply plugin: 'eclipse-wtp'
 apply plugin: 'spring-boot' 
 apply plugin: 'war'
 
+configure(allprojects) {
+	apply plugin: 'propdeps'
+	apply plugin: 'propdeps-maven'
+	apply plugin: 'propdeps-idea'
+	apply plugin: 'propdeps-eclipse'
+}
 
 war {
 	baseName = 'flight'
@@ -36,8 +44,11 @@ dependencies {
 	compile group: 'org.jsoup', name: 'jsoup', version: '1.8.3'
 	compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.5'
 	compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.5'
+	optional "org.springframework.boot:spring-boot-configuration-processor"
 	testCompile('org.springframework.boot:spring-boot-starter-test') 
 }
+
+compileJava.dependsOn(processResources)
 
 dependencyManagement {
 	imports { 
