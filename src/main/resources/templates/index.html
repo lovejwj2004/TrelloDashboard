@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://api.trello.com/1/client.js?key=3bced7489a806cfac0a7d3df3d559cab"></script>
+    <script src="/js/trellodata.js" type="text/javascript"></script>
+    <script src="/js/echarts.min.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            var boards;
+            var boardName;
+
+            var success = function(successMsg) {
+                boards = new Board(successMsg);
+
+                $.each(successMsg,function(key,value){
+                    if(value.name === 'Life' || value.name === 'Work'){
+                        var boardID = value.id;
+                        var parameters = {
+                            cards:'open',
+                            card_fields:'idBoard,name',
+                            fields:'idBoard,name'
+                        };
+                        boards[boardID] = value.name;
+                        Trello.get('/boards/'+boardID+'/lists',parameters,boards.retrieveListsByBoard,error);
+                    }
+                });
+            };
+
+            var error = function(errorMsg) {
+                console.log(errorMsg);
+            };
+
+            var authenticationSuccess = function () {
+                Trello.get('/member/me/boards',success,error);
+            };
+
+            Trello.authorize({
+                type: 'popup',
+                name: 'Trello Custom',
+                scope: {
+                    read: true,
+                    write: false
+                },
+                expiration: 'never',
+                success: authenticationSuccess,
+                error: error
+            });
+        });
+    </script>
+    <title>Trello Test</title>
+</head>
+<body>
+    <div id="container">
+        <div id="lists">
+
+        </div>
+    </div>
+</body>
+</html>
