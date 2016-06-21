@@ -8,7 +8,8 @@ function Board(boardStr){
     this.retrieveListsByBoard = function retrieveListsByBoard(successMsg){
         var listData = [];
         var cardData = [];
-        var title = document.createElement("p");
+        var title = document.createElement("div");
+        title.setAttribute("class","col-md-6");
         title.innerHTML = obj[successMsg[0].idBoard];
         document.getElementById("lists").appendChild(title);
         $.each(successMsg,function(key,v){
@@ -17,7 +18,7 @@ function Board(boardStr){
                 $.each(v.cards,function(key,v){
                     var card = document.createElement('li');
                     card.innerHTML = v.name;
-                    document.getElementById("lists").appendChild(card);
+                   title.appendChild(card);
                 });
             }
             var name = v.name;
@@ -26,8 +27,11 @@ function Board(boardStr){
             listData[key] = data;
             cardData[key] = name;
         });
+        var displayRow = document.createElement("div");
+        displayRow.setAttribute("class","row");
 
         var displayDiv = document.createElement('div');
+        displayDiv.setAttribute("class","col-md-12");
         displayDiv.style.cssText = "width:600px;height:400px";
         var myChart = echarts.init(displayDiv);
         myChart.setOption({
@@ -64,7 +68,9 @@ function Board(boardStr){
                 }
             ]
         });
-        document.getElementById("container").appendChild(displayDiv);
+        displayRow.appendChild(displayDiv);
+        document.getElementById("container").appendChild(displayRow);
+
     }
 }
 
