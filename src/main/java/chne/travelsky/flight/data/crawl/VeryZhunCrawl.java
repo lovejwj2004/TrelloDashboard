@@ -31,7 +31,7 @@ public class VeryZhunCrawl {
             flights = fetchFlightsInfo(flightList);
             logger.info("Flight Size:"+flights.size());
         }catch (IOException e){
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
 
         return flights;
