@@ -13,7 +13,7 @@ function Board(boardStr){
         title.innerHTML = obj[successMsg[0].idBoard];
         document.getElementById("lists").appendChild(title);
         $.each(successMsg,function(key,v){
-            if(v.name === 'InBox'){
+            if(v.name === 'ProcessOn'){
                 $.each(v.cards,function(key,v){
                     var card = document.createElement('li');
                     card.innerHTML = v.name;

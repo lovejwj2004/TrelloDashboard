@@ -57,7 +57,7 @@ public class VeryZhunCrawl {
         List<Flight> flights = new ArrayList<Flight>();
         for (Element flightElem : flightElems){
             Flight flight =  new Flight();
-            flight.setFlightNum(flightElem.attr("data_fnum"));
+            flight.setFlightNum(flightElem.select("div > span.w260 > b > a:nth-child(2)").get(0).text());
             flight.setDepartureTime(flightElem.getElementsByAttribute("dplan").get(0).text());
             flight.setArrivalTime(flightElem.getElementsByAttribute("aplan").get(0).text());
             flights.add(flight);
