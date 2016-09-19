@@ -1,4 +1,4 @@
-package chne.travelsky.flight.controller;
+package chne.trello.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,5 +13,10 @@ public class IndexController {
     @RequestMapping("/index")
     public String greeting( Model model) {
         return "index";
+    }
+
+    @RequestMapping("/login")
+    public String login(Model model){
+        return "login";
     }
 }

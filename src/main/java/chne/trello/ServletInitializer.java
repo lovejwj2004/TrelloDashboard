@@ -1,4 +1,4 @@
-package chne.travelsky.flight;
+package chne.trello;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
@@ -7,7 +7,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(FlightApplication.class);
+		return application.sources(TrelloDashboardApplication.class);
 	}
 
 }

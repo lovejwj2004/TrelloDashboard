@@ -1,7 +1,7 @@
-package chne.travelsky.flight.properties.test;
+package chne.trello.properties.test;
 
-import chne.travelsky.flight.FlightApplication;
-import chne.travelsky.flight.config.ConfigValues;
+import chne.trello.TrelloDashboardApplication;
+import chne.trello.config.ConfigValues;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  * Created by lovejwj2004 on 2016/6/2.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = FlightApplication.class)
+@SpringApplicationConfiguration(classes = TrelloDashboardApplication.class)
 @TestPropertySource(locations = "classpath:config/test.properties")
 public class PropertiesTest {
     @Autowired

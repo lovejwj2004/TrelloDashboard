@@ -1,4 +1,4 @@
-package chne.travelsky.flight;
+package chne.trello;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
